@@ -1,6 +1,10 @@
 package com.example.concurrentlearn.msb;
 
+import com.google.common.collect.Lists;
+import org.springframework.util.CollectionUtils;
+
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @ClassName: HashMapTest
@@ -12,8 +16,14 @@ import java.util.HashMap;
 public class HashMapTest {
   public static void main(String[] args) {
     //
-      HashMap hashMap = new HashMap();
-      hashMap.put("key1","value1");
+
+      HashMap<String, List<String >> map = new HashMap<>();
+      map.put("key1", Lists.newArrayList("a","b","d","e","f","g","h","i","2"));
+      List<String> value = map.get("key1");
+      if(!CollectionUtils.isEmpty(value)){
+          value.addAll(Lists.newArrayList("y","p"));
+          map.put("key1",value);
+      }
 
 
   }
