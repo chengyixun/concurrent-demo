@@ -32,7 +32,7 @@ public class ReenterLockTest {
             e.printStackTrace();
         }
 
-        System.out.println();
+        System.out.println("===== main ====");
 
         Thread t3 = new Thread(phone, "T3");
         Thread t4 = new Thread(phone, "T4");
